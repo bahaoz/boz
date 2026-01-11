@@ -4,13 +4,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class MYS_Logger {
+class MPS_Logger {
 	public static function log( $message, $context = array() ) {
 		if ( ! defined( 'WP_DEBUG' ) || ! WP_DEBUG ) {
 			return;
 		}
 
-		$entry = '[MYS] ' . $message;
+		$entry = '[MPS] ' . $message;
+
 		if ( ! empty( $context ) ) {
 			$entry .= ' | ' . wp_json_encode( $context );
 		}
